@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/schema/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.camper01.mapper.ReservationMapper">
+    <insert id="insertRv">
+        INSERT INTO reservation (resNum, resRequest) VALUES(resNum = #{resNum}, resRequest = #{resRequest})
+    </insert>
+
+    <update id="updateRv">
+        UPDATE reservation SET resNum = #{resNum}, resRequest = #{resRequest} WHERE resNum = #{resNum}
+    </update>
+
+    <delete id="deleteRv">
+        DELETE FROM reservation WHERE resNum = #{resNum}
+    </delete>
+
+    <select id="readRv" resultType="int">
+        SELECT * FROM reservation WHERE resNum = #{resNum}
+    </select>
+
+    <select id="ListMyRv" resultType="String">
+        SELECT * FROM reservation WHERE userNum = #{userNum}
+    </select>
+</mapper>

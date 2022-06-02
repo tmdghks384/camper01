@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/schema/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.camper01.mapper.ReplyMapper">
+    <insert id="insertReply">
+        INSERT INTO reply (repCont) VALUES(repCont = #{repCont}
+    </insert>
+
+    <delete id="deleteReply">
+        DELETE FROM reply WHERE repNum = #{repNum}
+    </delete>
+
+    <select id="readReply" resultType="String">
+        SELECT * FROM reply WHERE bdNum = #{bdNum}
+    </select>
+</mapper>

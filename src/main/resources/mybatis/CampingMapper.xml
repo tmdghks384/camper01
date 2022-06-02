@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/schema/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.camper01.mapper.CampingMapper">
+    <insert id="insertCamping">
+        INSERT INTO camping (camName, camAddr, camCtg, camCheckInTime, camCheckOutTime, camTime, camLat, camLmg)
+        VALUES(camName = #{camName}, camAddr = #{camAddr}, camCtg = #{camCtg}, camCheckInTime = #{camCheckInTime}, camCheckOutTime = #{camCheckOutTime}, camTime = #{camTime}, camLat = #{camLat}, camLmg = #{camLmg})
+    </insert>
+
+    <update id="updateCamping">
+        UPDATE board
+        SET
+        camName = #{camName},
+        camAddr = #{camAddr},
+        camCtg = #{camCtg},
+        camCheckInTime = #{camCheckInTime},
+        camCheckOutTime = #{camCheckOutTime},
+        camTime = #{camTime},
+        camLat = #{camLat},
+        camLmg = #{camLmg}
+        WHERE camNum = #{camNum}
+    </update>
+
+    <delete id="deleteCamping">
+        DELETE FROM camping WHERE camNum = #{camNum}
+    </delete>
+
+    <select id="readDetailCamping" resultType="String">
+        SELECT * FROM camping WHERE camNum = #{camNum}
+    </select>
+
+    <select id="readCamping" resultType="String">
+        SELECT * FROM camping
+    </select>
+</mapper>

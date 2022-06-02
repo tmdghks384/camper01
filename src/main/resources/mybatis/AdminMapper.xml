@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/schema/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.camper01.mapper.AdminMapper">
+    <insert id="insertAdmin">
+        INSERT INTO admin
+        (adId, adPw, adEmail, adPhone, adBirth, adAddr, adBussNum)
+        VALUES(
+        #{adId}
+        , #{adPw}
+        , #{adEmail}
+        , #{adPhone}
+        , #{adBirth}
+        , #{adAddr}
+        , #{adBussNum}
+        )
+    </insert>
+
+    <update id="updateAdmin">
+        UPDATE admin SET adId = #{adId}, adPw = #{adPw}, adEmail = #{adEmail}, adPhone = #{adPhone}, adBirth = #{adBirth}, adAddr = #{adAddr}, adBussNum = #{adBussNum}
+        WHERE adNum = #{adNum}
+    </update>
+
+    <delete id="deleteAdmin">
+        DELETE FROM admin WHERE adNum = #{adNum}
+    </delete>
+
+
+</mapper>

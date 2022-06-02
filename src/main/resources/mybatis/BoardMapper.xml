@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/schema/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.camper01.mapper.BoardMapper">
+    <insert id="insertBoard">
+        INSERT INTO board (bdTitle, bdCont) VALUES (bdTitle = #{bdTitle}, bdCont = #{bdCont}
+    </insert>
+
+    <update id="updateBoard">
+        UPDATE board SET bdTitle = #{bdTitle}, bdCont = #{bdCont}, modDate = current_timestamp WHERE bdNum = #{bdNum}
+    </update>
+
+    <delete id="deleteBoard">
+        DELETE FROM board WHERE bdNum = #{bdNum}
+    </delete>
+
+    <select id="listBoard" resultType="String">
+        select * from board;
+    </select>
+
+    <select id="readBoard" resultType="String">
+        select * from board where bdNum = #{bdNum}
+    </select>
+</mapper>
