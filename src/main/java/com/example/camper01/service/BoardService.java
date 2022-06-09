@@ -6,6 +6,8 @@ import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BoardService {
     @Setter(onMethod_ = @Autowired)
@@ -24,8 +26,8 @@ public class BoardService {
         return mapper.deleteBoard(bdNum) == 1;
     }
 
-    public BoardVO listBoard(BoardVO vo) {
-        return mapper.listBoard(vo);
+    public List<BoardVO> listBoard(Long userNum) {
+        return mapper.listBoard(userNum);
     }
 
     public BoardVO readBoard(Long bdNum) {

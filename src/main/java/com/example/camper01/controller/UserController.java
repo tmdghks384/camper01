@@ -8,9 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpSession;
 
 @Controller
 @RequiredArgsConstructor
@@ -28,9 +25,14 @@ public class UserController {
         return "user/join";
     }
 
-    @GetMapping("/user/myPage/{userNum}")
-    public String myPage(@PathVariable("userNum") Long userNum, Model model) {
-        model.addAttribute("user", user.readUser(userNum));
-        return "user/myPage";
-    }
+//
+//    @GetMapping("/update/{uCode}")
+//    public String updateUser(@PathVariable(value = "userNum") Long userNum, Model model) {
+//        if (userNum == null) {
+//            return "redirect:/";
+//        } else {
+//            UserVO vo = user.updateUser();
+//        }
+//        return "user/updateUser";
+//    }
 }

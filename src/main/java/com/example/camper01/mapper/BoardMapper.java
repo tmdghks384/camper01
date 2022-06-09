@@ -3,6 +3,8 @@ package com.example.camper01.mapper;
 import com.example.camper01.domain.BoardVO;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface BoardMapper {
     public int insertBoard(BoardVO vo);
@@ -11,7 +13,7 @@ public interface BoardMapper {
 
     public int deleteBoard(Long bdNum);
 
-    public BoardVO listBoard(BoardVO vo);
+    public List<BoardVO> listBoard(Long userNum);
 
     public BoardVO readBoard(Long bdNum);
 }

@@ -23,4 +23,8 @@
     <select id="readUser" resultType="UserVO">
         SELECT * FROM users WHERE userNum = #{userNum}
     </select>
+
+    <select id="loginUser" resultType="Long">
+        SELECT * FROM users WHERE userNum = #{userNum}, userPw = #{userPw}
+    </select>
 </mapper>

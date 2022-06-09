@@ -6,6 +6,8 @@ import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CampingService {
     @Setter(onMethod_ = @Autowired)
@@ -22,5 +24,13 @@ public class CampingService {
 
     public boolean deleteCamping(Long camNum) {
         return mapper.deleteCamping(camNum) == 1;
+    }
+
+    public CampingVO readDetailCamping(Long camNum) {
+        return mapper.readDetailCapming(camNum);
+    }
+
+    public List<CampingVO> readCamping(CampingVO vo) {
+        return mapper.readCamping(vo);
     }
 }

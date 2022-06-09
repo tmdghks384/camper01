@@ -1,5 +1,6 @@
 package com.example.camper01.mapper;
 
+import com.example.camper01.domain.MemberVO;
 import com.example.camper01.domain.UserVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,4 +13,6 @@ public interface UserMapper {
     public int deleteUser(Long userNum);
 
     public UserVO readUser(Long userNum);
+
+    public UserVO loginUser(UserVO userVO);
 }

@@ -1,5 +1,6 @@
 package com.example.camper01.service;
 
+import com.example.camper01.domain.MemberVO;
 import com.example.camper01.domain.UserVO;
 import com.example.camper01.mapper.UserMapper;
 import lombok.Setter;
@@ -26,5 +27,9 @@ public class UserService {
 
     public UserVO readUser(Long userNum) {
         return mapper.readUser(userNum);
+    }
+
+    public UserVO loginUser(UserVO userVO){
+        return mapper.loginUser(userVO);
     }
 }
