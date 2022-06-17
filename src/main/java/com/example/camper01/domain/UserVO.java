@@ -6,12 +6,10 @@ import java.sql.Timestamp;
 
 @Data
 public class UserVO {
-    private long userNum;
-    private String userId;
-    private String userPw;
-    private String userEmail;
-    private String userPhone;
-    private Timestamp userBirth;
-    private String userAddr;
-    private Timestamp regDate;
+    private String email;
+    private String pw;
+    private String nickname;
+    private short age;
+    private char sex;
+    private Timestamp joindt;
 }
