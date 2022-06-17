@@ -18,16 +18,12 @@ public class BoardService {
         return mapper.insertBoard(vo) == 1;
     }
 
-    public boolean updateBoard(BoardVO vo) {
-        return mapper.updateBoard(vo) == 1;
-    }
-
     public boolean deleteBoard(Long bdNum) {
         return mapper.deleteBoard(bdNum) == 1;
     }
 
-    public List<BoardVO> listBoard(Long userNum) {
-        return mapper.listBoard(userNum);
+    public List<BoardVO> listBoard() {
+        return mapper.listBoard();
     }
 
     public BoardVO readBoard(Long bdNum) {

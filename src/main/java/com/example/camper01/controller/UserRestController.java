@@ -20,7 +20,7 @@ public class UserRestController {
     private final UserService user;
 
     @PostMapping("/join")
-    public ResponseEntity<String> insertUser(@RequestBody UserVO userVO, HttpServletRequest request) {
+    public ResponseEntity<String> insertUser(@RequestBody UserVO userVO) {
         boolean isInserted = user.insertUser(userVO);
         try {
             if (isInserted == true) {
@@ -32,40 +32,6 @@ public class UserRestController {
             log.warn("시스템 에러");
         }
         return new ResponseEntity<>("회원가입이 완료되었습니다.", HttpStatus.OK);
-    }
-
-    @PostMapping("/update/{userNum}")
-    public ResponseEntity<String> updateUser(@PathVariable(value = "userNum") Long userNum, HttpSession session, @RequestBody UserVO userVO) {
-        Long uNum = (Long) session.getAttribute("userNum");
-        boolean isInserted = user.updateUser(userVO);
-        try {
-            if (isInserted == true) {
-                log.info("업데이트 성공");
-            }
-        } catch (DataAccessException e) {
-            log.warn("데이터 처리 실패");
-        } catch (Exception e) {
-            log.warn("시스템 에러");
-        }
-
-        return new ResponseEntity<>("유저 업데이트가 완료되었습니다.", HttpStatus.OK);
-    }
-
-    @PostMapping("/delete")
-    public ResponseEntity<String> deleteUser(HttpServletRequest request, HttpSession session) {
-        Long userNum = (Long) session.getAttribute("userNum");
-        boolean isDeleted = user.deleteUser(userNum);
-        try {
-            if (isDeleted == true) {
-                log.info("삭제 완료");
-            }
-        } catch (DataAccessException e) {
-            log.warn("데이터 처리 실패");
-        } catch (Exception e) {
-            log.warn("에러 발생");
-        }
-
-        return new ResponseEntity<>("유저 삭제가 완료되었습니다.", HttpStatus.OK);
     }
 
 }

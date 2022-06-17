@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -34,9 +33,8 @@ public class BoardController {
     }
 
     @GetMapping("/list")
-    public String listBoard(Model model, HttpSession session) {
-        Long userNum = (Long) session.getAttribute("member");
-        model.addAttribute("board", board.listBoard(userNum));
+    public String listBoard(Model model) {
+        model.addAttribute("board", board.listBoard());
         return "redirect:/list";
     }
 }

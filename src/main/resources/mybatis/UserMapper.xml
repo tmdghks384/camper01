@@ -4,27 +4,28 @@
         "http://mybatis.org/schema/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.camper01.mapper.UserMapper">
     <insert id="insertUser">
-        INSERT INTO users(
-        userId, userPw, userEmail, userPhone, userBirth, userAddr)
+        INSERT INTO member(
+        email, pw, nickname, age, sex)
         VALUES (
-        #{userId}, #{userPw}, #{userEmail}, #{userPhone}, #{userBirth}, #{userAddr}
+        #{email}, #{pw}, #{nickname}, #{age}, #{sex}
         )
     </insert>
 
-    <update id="updateUser">
-        UPDATE users SET userId = #{userId}, userPw = #{userPw}, userEmail = #{userEmail}, userPhone = #{userPhone}, userBirth = #{userBirth}, userAddr = #{userAddr}
-        WHERE userNum = #{userNum}
-    </update>
-
-    <delete id="deleteUser">
-        DELETE from users WHERE userNum = #{userNum}
-    </delete>
-
-    <select id="readUser" resultType="UserVO">
-        SELECT * FROM users WHERE userNum = #{userNum}
-    </select>
-
     <select id="loginUser" resultType="Long">
-        SELECT * FROM users WHERE userNum = #{userNum}, userPw = #{userPw}
+        SELECT * FROM member WHERE email = #{email}, userPw = #{userPw}
     </select>
+
+    <!--    <update id="updateUser">-->
+    <!--        UPDATE users SET userId = #{userId}, userPw = #{userPw}, userEmail = #{userEmail}, userPhone = #{userPhone}, userBirth = #{userBirth}, userAddr = #{userAddr}-->
+    <!--        WHERE userNum = #{userNum}-->
+    <!--    </update>-->
+
+    <!--    <delete id="deleteUser">-->
+    <!--        DELETE from users WHERE userNum = #{userNum}-->
+    <!--    </delete>-->
+
+    <!--    <select id="readUser" resultType="UserVO">-->
+    <!--        SELECT * FROM users WHERE userNum = #{userNum}-->
+    <!--    </select>-->
+
 </mapper>

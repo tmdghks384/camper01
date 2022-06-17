@@ -12,5 +12,5 @@ public class BoardVO {
     private Timestamp regDate;
     private Timestamp modDate;
 
-    private long userNum; //user FK
+    private String email;
 }

@@ -25,14 +25,4 @@ public class UserController {
         return "user/join";
     }
 
-//
-//    @GetMapping("/update/{uCode}")
-//    public String updateUser(@PathVariable(value = "userNum") Long userNum, Model model) {
-//        if (userNum == null) {
-//            return "redirect:/";
-//        } else {
-//            UserVO vo = user.updateUser();
-//        }
-//        return "user/updateUser";
-//    }
 }

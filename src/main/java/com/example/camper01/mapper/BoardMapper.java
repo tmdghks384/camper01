@@ -13,7 +13,7 @@ public interface BoardMapper {
 
     public int deleteBoard(Long bdNum);
 
-    public List<BoardVO> listBoard(Long userNum);
+    public List<BoardVO> listBoard();
 
     public BoardVO readBoard(Long bdNum);
 }
